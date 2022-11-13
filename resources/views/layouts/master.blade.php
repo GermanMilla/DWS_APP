@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Income Expense Manager</title>
+    <title>Registro de Actividad Financiera</title>
     <!-- Custom fonts for this template-->
     <link href="{{ asset('dashboard/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
@@ -21,10 +21,10 @@
         @include('layouts.partials.sidebar')
         <div id="content-wrapper">
             @yield('content')
-            @include('layouts.partials.calculator')
+            <!-- @include('layouts.partials.calculator') -->
             <!-- /.container-fluid -->
             <!-- Sticky Footer -->
-            @include('layouts.partials.footer')
+            <!-- @include('layouts.partials.footer') -->
         </div>
         <!-- /.content-wrapper -->
     </div>

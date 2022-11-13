@@ -8,21 +8,21 @@
     <li class="nav-item {{ Route::currentRouteName() == 'incomes.index' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('incomes.index') }}">
         <i class="fas fa-fw fa-dollar-sign"></i>
-        <span>Incomes</span></a>
+        <span>Entradas</span></a>
     </li>
     <li class="nav-item {{ Route::currentRouteName() == 'expense.index' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('expense.index') }}">
         <i class="fas fa-fw fa-money-bill"></i>
-        <span>Expenses</span></a>
+        <span>Salidas</span></a>
     </li>
     <li class="nav-item {{ Route::currentRouteName() == 'summary' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('summary') }}">
         <i class="fas fa-fw fa-table"></i>
-        <span>All Summary</span></a>
+        <span>Todas</span></a>
     </li>
     <li class="nav-item {{ Route::currentRouteName() == 'notes.index' ? 'active' : '' }}" title="This is not calculate in Income/Expense">
         <a class="nav-link" href="{{ route('notes.index') }}">
         <i class="fas fa-fw fa-sticky-note"></i>
-        <span>Notes</span></a>
+        <span>Notas</span></a>
     </li>
 </ul>
