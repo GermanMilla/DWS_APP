@@ -7,9 +7,9 @@
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">
-                <a href="{{ route('incomes.index') }}">Income</a>
+                <a href="{{ route('incomes.index') }}">Entrada</a>
             </li>
-            <li class="breadcrumb-item active">Edit</li>
+            <li class="breadcrumb-item active">Editar</li>
         </ol>
         @if ($errors->any())
             <div class="alert alert-danger alert-dismissible fade show rounded" role="alert">
@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-xl-8 offset-2">
                 <div class="card mx-auto mt-5">
-                    <div class="card-header">Update Income</div>
+                    <div class="card-header">Actualizacion Entrada</div>
                     <div class="card-body">
                         <form action="{{ route('incomes.update') }}" method="POST">
                             @csrf
@@ -31,19 +31,19 @@
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="text" id="income_title" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" name="income_title" value="{{ $income->income_title }}">
-                                    <label for="income_title">Income Description</label>
+                                    <label for="income_title">Descripcion de Entrada</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="number" step="any" min="0.01" id="income_amount" class="form-control" placeholder="Password" required="required" name="income_amount" value="{{ $income->income_amount }}">
-                                    <label for="income_amount">Income Amount</label>
+                                    <label for="income_amount">Cantidad de entrada</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="date" id="income_date" class="form-control" placeholder="Income Date" required="required" name="income_date" value="{{ $income->income_date }}">
-                                    <label for="income_date">Income Date</label>
+                                    <label for="income_date">Fecha de entrada</label>
                                 </div>
                             </div>
                             <div class="float-right">

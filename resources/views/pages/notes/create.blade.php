@@ -7,9 +7,9 @@
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">
-                <a href="{{ route('notes.index') }}">Note</a>
+                <a href="{{ route('notes.index') }}">Nota</a>
             </li>
-            <li class="breadcrumb-item active">Insert</li>
+            <li class="breadcrumb-item active">Ingresar</li>
         </ol>
         @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show rounded" role="alert">
@@ -23,26 +23,26 @@
         <div class="row">
             <div class="col-xl-8 offset-2">
                 <div class="card mx-auto mt-5">
-                    <div class="card-header">Insert New Note</div>
+                    <div class="card-header">Ingresar nueva Nota</div>
                     <div class="card-body">
                         <form action="{{ route('notes.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="text" id="note_title" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" name="note_title">
-                                    <label for="note_title">Note Description</label>
+                                    <label for="note_title">Descripcion de la Nota</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="number" step="any" min="0.01" id="note_amount" class="form-control" placeholder="Password" required="required" name="note_amount">
-                                    <label for="note_amount">Note Amount</label>
+                                    <label for="note_amount">Cantidad de nota</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="date" id="note_date" class="form-control" placeholder="Password" required="required" name="note_date" value="{{ date('Y-m-d') }}">
-                                    <label for="note_date">Note Date</label>
+                                    <label for="note_date">Fecha de Nota</label>
                                 </div>
                             </div>
                             <div class="float-right">

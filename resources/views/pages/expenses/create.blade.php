@@ -7,9 +7,9 @@
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">
-                <a href="{{ route('expense.index') }}">Expense</a>
+                <a href="{{ route('expense.index') }}">Salida</a>
             </li>
-            <li class="breadcrumb-item active">Insert</li>
+            <li class="breadcrumb-item active">Ingresar</li>
         </ol>
         @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show rounded" role="alert">
@@ -23,26 +23,26 @@
         <div class="row">
             <div class="col-xl-8 offset-2">
                 <div class="card mx-auto mt-5">
-                    <div class="card-header">Insert New Expense</div>
+                    <div class="card-header">Crear nueva salida</div>
                     <div class="card-body">
                         <form action="{{ route('expense.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="text" id="expense_title" class="form-control" placeholder="Expense Description" required="required" autofocus="autofocus" name="expense_title">
-                                    <label for="expense_title">Expense Description</label>
+                                    <label for="expense_title">Descripcion Salida</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="number" step="any" id="expense_amount" min="0.01"  class="form-control" placeholder="Expense Amount" required="required" name="expense_amount">
-                                    <label for="expense_amount">Expense Amount</label>
+                                    <label for="expense_amount">Cantidad de Salida</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <input type="date" id="expense_amount" class="form-control" placeholder="Expense Date" required="required" name="expense_date" value="{{ date('Y-m-d') }}">
-                                    <label for="expense_amount">Expense Date</label>
+                                    <label for="expense_amount">Fecha de Salida</label>
                                 </div>
                             </div>
                             <div class="float-right">

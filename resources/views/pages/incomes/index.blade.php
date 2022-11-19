@@ -6,7 +6,7 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Income</li>
+            <li class="breadcrumb-item active">Entrada</li>
         </ol>
         @if (Session::has('message'))
         <div class="alert alert-success alert-dismissible fade show rounded" role="alert">
@@ -20,10 +20,10 @@
         	<div class="col-xl-6 offset-xl-3 col-sm-12 mb-3">
         		<ul class="list-group">
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
-				    <a href="{{ route('incomes.create') }}" class="badge badge-success p-2 mx-auto">Add New Income</a>
+				    <a href="{{ route('incomes.create') }}" class="badge badge-success p-2 mx-auto">Crear nueva Entrada</a>
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
-				    Total Income
+				    Total de Entrada
                       <span class="badge badge-primary badge-pill">{{ $totalIncomes }}</span>
 				  </li>
 				</ul>

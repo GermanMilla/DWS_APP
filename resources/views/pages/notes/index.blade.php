@@ -6,7 +6,7 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Notes</li>
+            <li class="breadcrumb-item active">Notas</li>
         </ol>
 
         @if (Session::has('message'))
@@ -21,7 +21,7 @@
         	<div class="col-xl-6 offset-xl-3 col-sm-12 mb-3">
         		<ul class="list-group">
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
-				    <a href="{{ route('notes.create') }}" class="badge badge-success p-2 mx-auto" >Add New Note</a>
+				    <a href="{{ route('notes.create') }}" class="badge badge-success p-2 mx-auto" >Crear una nueva Nota</a>
 				  </li>
 				</ul>
         	</div>

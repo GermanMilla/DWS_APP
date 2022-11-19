@@ -6,20 +6,20 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">All Summary</li>
+            <li class="breadcrumb-item active">Ver Resumen</li>
         </ol>
         <div class="row">
         	<div class="col-xl-6 offset-xl-3 col-sm-12 mb-3">
         		<ul class="list-group">
 				  <li class="list-group-item d-flex bg-info text-white justify-content-center align-items-center">
-				    All Data
+				    Total de Datos
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
-				    Total Income
+				    Total Ingresos
 				    <span class="badge badge-primary badge-pill">{{ $total_income }}</span>
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
-				    Total Expense
+				    Total Gastos
 				    <span class="badge badge-danger badge-pill">{{ $total_expense }}</span>
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
