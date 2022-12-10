@@ -6,7 +6,7 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Entrada</li>
+            <li class="breadcrumb-item active">Entradas</li>
         </ol>
         @if (Session::has('message'))
         <div class="alert alert-success alert-dismissible fade show rounded" role="alert">
@@ -20,45 +20,36 @@
         	<div class="col-xl-6 offset-xl-3 col-sm-12 mb-3">
         		<ul class="list-group">
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
-				    <a href="{{ route('incomes.create') }}" class="badge badge-success p-2 mx-auto">Crear nueva Entrada</a>
+				    <a href="{{ route('incomes.create') }}" class="badge badge-success p-2 mx-auto">Agregar nueva Entrada</a>
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
 				    Total de Entrada
-                      <span class="badge badge-primary badge-pill">{{ $totalIncomes }}</span>
+                      <span class="badge badge-primary badge-pill">${{ $totalIncomes }}</span>
 				  </li>
 				</ul>
         	</div>
         </div>
 
-        <div class="row">
-            @foreach($incomes as $income)
-                <div class="col-xl-4 col-sm-6 mb-3">
-
-                    <div class="card text-white bg-info o-hidden h-100">
-
-                        <div class="card-header">
-                            <span class="float-left text-dark">{{ $income->income_date }}</span>
-                            <span class="btn-group-sm float-right">
+        <table class="table table-striped mt-2">
+                <thead class="bg-dark">
+                    <th style="color:#fff;">Fecha</th>
+                    <th style="color:#fff;">Descripción</th>
+                    <th style="color:#fff;">Cantidad</th>
+                    <th style="color:#fff;">Acción</th>
+                </thead>
+                <tbody>
+                    @foreach($incomes as $income)
+                        <tr>
+                            <td>{{ $income->income_date }}</td>
+                            <td>{{ $income->income_title }}</td>
+                            <td>${{ $income->income_amount }}</td>
+                            <td>
                                 <a href="{{ route('incomes.edit',$income->id) }}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></a>
                                 <a href="{{ route('incomes.delete',$income->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                            </span>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="card-body-icon mt-5">
-                                <i class="fas fa-fw fa-dollar-sign"></i>
-                            </div>
-                            <div>{{ $income->income_title }}</div>
-                            <div class="font-weight-bold"><span style="font-weight:900;">$ </span> {{ $income->income_amount }}</div>
-                        </div>
-
-                    </div>
-
-                </div>
-            @endforeach
-            <div class="col-xl-12 col-sm-12">
-                {{ $incomes->links() }}
-            </div>
-        </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
     </div>
 @endsection

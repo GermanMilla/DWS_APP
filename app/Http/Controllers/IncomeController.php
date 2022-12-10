@@ -40,7 +40,7 @@ class IncomeController extends Controller
         $incomes->user_id = Auth::user()->id;
         $incomes->save();
 
-        return redirect('/incomes')->with('message', 'New Income Added');
+        return redirect('/incomes')->with('message', 'Nuevo Ingreso Añadido');
     }
 
     public function edit($id)
@@ -63,12 +63,12 @@ class IncomeController extends Controller
         $income->income_date = $request->income_date;
         $income->update();
 
-        return redirect('/incomes')->with('message', 'Income details updated successfully');
+        return redirect('/incomes')->with('message', 'Ingreso actualizado exitosamente');
     }
 
     public function destroy($id)
     {
         Income::findOrFail($id)->delete();
-        return back()->with('message', 'Income details deleted successfully');
+        return back()->with('message', 'Ingreso borrado exitosamente');
     }
 }

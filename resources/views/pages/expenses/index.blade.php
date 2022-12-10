@@ -6,7 +6,7 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Salida</li>
+            <li class="breadcrumb-item active">Salidas</li>
         </ol>
         @if (Session::has('message'))
         <div class="alert alert-success alert-dismissible fade show rounded" role="alert">
@@ -19,16 +19,16 @@
         	<div class="col-xl-6 offset-xl-3 col-sm-12 mb-3">
         		<ul class="list-group">
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
-				    <a href="{{ route('expense.create') }}" class="badge badge-primary p-2 mx-auto">Agregar nuevo Salida</a>
+				    <a href="{{ route('expense.create') }}" class="badge badge-primary p-2 mx-auto">Agregar nueva salida</a>
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
-				    Total de Salida
-                      <span class="badge badge-danger badge-pill">{{ $totalExpenses }}</span>
+				    Total de Salidas
+                      <span class="badge badge-danger badge-pill">${{ $totalExpenses }}</span>
 				  </li>
 				</ul>
         	</div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             @foreach($expenses as $expense)
                 <div class="col-xl-4 col-sm-6 mb-3">
                     <div class="card text-white bg-danger o-hidden h-100">
@@ -52,6 +52,30 @@
             <div class="col-xl-12 col-sm-12">
                 {{ $expenses->links() }}
             </div>
-        </div>
+        </div> -->
+        
+        <table class="table table-striped mt-2">
+            <thead class="bg-dark">
+            <th style="color:#fff;">Fecha</th>
+            <th style="color:#fff;">Descripción</th>
+            <th style="color:#fff;">Cantidad</th>
+            <th style="color:#fff;">Acción</th>
+            </thead>
+            <tbody>
+                @foreach($expenses as $expense)
+                    <tr>
+                        <td>{{$expense->expense_date}}</td>
+                        <td>{{$expense->expense_title}}</td>
+                        <td>${{$expense->expense_amount}}</td>
+                        <td>
+                            <a href="{{ route('expenses.edit',$expense->id) }}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                            <a href="{{ route('expenses.delete',$expense->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+
+        </table>
+
     </div>
 @endsection

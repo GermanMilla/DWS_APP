@@ -36,7 +36,7 @@ class ExpenseController extends Controller
         $expense->user_id = Auth::user()->id;
         $expense->save();
 
-        return redirect('/expense')->with('message', 'New Expense Added');
+        return redirect('/expense')->with('message', 'Nuevo Gasto Añadido');
     }
 
     public function edit($id)
@@ -59,12 +59,12 @@ class ExpenseController extends Controller
         $expense->expense_date = $request->expense_date;
         $expense->update();
 
-        return redirect('/expense')->with('message', 'Expense details updated successfully');
+        return redirect('/expense')->with('message', 'Gasto actualizado exitosamente');
     }
 
     public function destroy($id)
     {
         Expense::findOrFail($id)->delete();
-        return back()->with('message', 'Expense details deleted successfully');
+        return back()->with('message', 'Gasto borrado exitosamente');
     }
 }
