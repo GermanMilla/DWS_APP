@@ -21,7 +21,6 @@
         @include('layouts.partials.sidebar')
         <div id="content-wrapper">
             @yield('content')
-            <!-- @include('layouts.partials.calculator') -->
             <!-- /.container-fluid -->
             <!-- Sticky Footer -->
             <!-- @include('layouts.partials.footer') -->

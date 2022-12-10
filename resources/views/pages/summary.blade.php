@@ -11,41 +11,53 @@
         <div class="row">
         	<div class="col-xl-6 offset-xl-3 col-sm-12 mb-3">
         		<ul class="list-group">
-				  <li class="list-group-item d-flex bg-info text-white justify-content-center align-items-center">
+				  <li class="list-group-item d-flex bg-dark text-white justify-content-center align-items-center">
 				    Total de Datos
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
 				    Total Ingresos
-				    <span class="badge badge-primary badge-pill">{{ $total_income }}</span>
+				    <span class="badge badge-success badge-pill">${{ $total_income }}</span>
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
 				    Total Gastos
-				    <span class="badge badge-danger badge-pill">{{ $total_expense }}</span>
+				    <span class="badge badge-danger badge-pill">${{ $total_expense }}</span>
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
 				    Balance
-				    <span class="badge badge-primary badge-pill">{{ $balance }}</span>
+				    <span class="badge badge-primary badge-pill">${{ $balance }}</span>
 				  </li>
 				</ul>
         	</div>
         </div>
-        <div class="row">
-            @foreach($results as $result)
-                <div class="col-xl-4 col-sm-6 mb-3">
-                    <div class="card text-white {{($result['type'] == 'income')? 'bg-info':'bg-danger'}} o-hidden h-100">
-                        <div class="card-header">
-                            <span class="float-left text-dark">{{($result['type'] == 'income')? $result['created_at']:$result['created_at']}}</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-body-icon mt-5">
-                                <i class="fas fa-fw {{($result['type'] == 'income')? 'fa-dollar-sign':'fa-money-bill'}} "></i>
-                            </div>
-                            <div>{{($result['type'] == 'income')? $result['income_title']:$result['expense_title']}}</div>
-                            <div class="font-weight-bold text-dark">{{($result['type'] == 'income')? '৳ '.$result['income_amount']: '৳ '.$result['expense_amount']}}</div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+
+        <table class="table table-striped mt-2">
+                <thead class="bg-dark">                                     
+                                    <th style="color:#fff;">Fecha</th>
+                                    <th style="color:#fff;">Descripción</th>
+                                    <th style="color:#fff;">Cantidad</th>
+                                    <th style="color:#fff;">Tipo</th>
+                                                                   
+                </thead>
+                <tbody>
+                    @foreach($results as $result)
+                        <tr>
+                            <td>{{($result['type'] == 'income')? $result['created_at']:$result['created_at']}}</td>
+                            <td>{{($result['type'] == 'income')? $result['income_title']:$result['expense_title']}}</td>
+                            <td>{{($result['type'] == 'income')? '$'.$result['income_amount']: '$'.$result['expense_amount']}}</td>
+
+                            @if($result['type'] == 'income')
+                                <td>
+                                    <span class="bagde badge-success badge-pill">Ingreso</span>
+                                </td>
+
+                            @else
+                                <td>
+                                    <span class="bagde badge-danger badge-pill">Gasto</span>
+                                </td>
+                            @endif
+                        </tr>
+                    @endforeach
+                </tbody>
+        </table>
     </div>
 @endsection
