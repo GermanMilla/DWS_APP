@@ -13,9 +13,9 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <h2>Dashboard</h2>
+            
         </li>
-        <li class="breadcrumb-item active">Vista General</li>
     </ol>
 
 
