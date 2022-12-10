@@ -20,9 +20,9 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Todas</span></a>
     </li>
-    <li class="nav-item {{ Route::currentRouteName() == 'notes.index' ? 'active' : '' }}" title="This is not calculate in Income/Expense">
+    <!-- <li class="nav-item {{ Route::currentRouteName() == 'notes.index' ? 'active' : '' }}" title="This is not calculate in Income/Expense">
         <a class="nav-link" href="{{ route('notes.index') }}">
         <i class="fas fa-fw fa-sticky-note"></i>
         <span>Notas</span></a>
-    </li>
+    </li> -->
 </ul>
