@@ -6,13 +6,13 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('index') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Ver Resumen</li>
+            <li class="breadcrumb-item active">Todas las Transacciones</li>
         </ol>
         <div class="row">
         	<div class="col-xl-6 offset-xl-3 col-sm-12 mb-3">
         		<ul class="list-group">
 				  <li class="list-group-item d-flex bg-dark text-white justify-content-center align-items-center">
-				    Total de Datos
+				    Totalesy
 				  </li>
 				  <li class="list-group-item d-flex justify-content-between align-items-center">
 				    Total Ingresos
